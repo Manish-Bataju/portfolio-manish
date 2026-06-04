@@ -2,7 +2,7 @@
   "builds": [
     { "src": "apps/frontend/package.json", "use": "@vercel/node" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "apps/frontend/$1" }
-  ]
+  "installCommand": "npm install",
+  "buildCommand": "npm run build --workspace frontend",
+  "outputDirectory": "apps/frontend/dist"
 }
