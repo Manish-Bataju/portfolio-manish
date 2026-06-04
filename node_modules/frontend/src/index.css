@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    /* This ensures your app always takes up the full height */
+    min-height: 100vh;
+    /* Smooth scrolling is always a nice touch for portfolios */
+    scroll-behavior: smooth;
+    background-color: #D2F9F740;
+  }
+}
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", serif;
+  --font-script: "Kaushan Script", script;
+
+  /* 1. Define the animation name and duration */
+  --animate-marquee: marquee 15s linear infinite;
+
+  /* 2. Define the keyframes (Standard CSS) */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 30px)); } 
+  }
+}
+
+@theme inline {
+  /* 1. Standard Color Mapping (Keep these as is) */
+  /* --- WRAPPED COLOR PALETTE --- */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Radius is a direct unit, so no hsl() needed here */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* 2. ADAPTIVE RADIUS (The "Maia" Intelligence) */
+  /* We start small for Mobile-B and scale up for Desktop */
+  --radius-lg: var(--radius); 
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* 3. ADAPTIVE SPACING (New for your Bookstore) */
+  /* This creates a "gutter" variable you can use in your Shell */
+  --spacing-gutter: 1rem;
+
+
+ --breakpoint-*: initial;
+
+  /* 1. Smallest Phones (iPhone SE size) */
+  --breakpoint-mb: 375px;
+
+  /* 2. Larger Phones (iPhone Pro Max / Pixel) */
+  --breakpoint-mp: 480px;
+
+  /* 3. Mobile Landscape (Wider phones like Galaxy Ultra) */
+  --breakpoint-mls: 740px;
+
+  /* 4. Tablet Portrait (The iPad/Mi Pad Standard) */
+  --breakpoint-tp: 768px;
+
+  /* 5. Tablet Landscape (The "Wide Tablet" / Mi Pad 5 Landscape) */
+  --breakpoint-tls: 1024px;
+
+  /* 6. Laptops (MacBook Air / Standard Laptops) */
+  --breakpoint-lp: 1280px;
+
+  /* 7. Pro Workstations (Full HD 1080p Monitors) */
+  --breakpoint-dp: 1920px;
+}
+
+@layer base {
+  :root {
+    /* --- THE MODERN PROFESSIONAL (Warm Sand & Visible Navy) --- */
+
+    /* 1. THE FOUNDATION (Warm Linen) */
+    --background: 30 33% 96%;      /* #F7F3F0 | Soft Sand */
+    --mint-fresh: 176 82% 90%;    /* #D2F9F7 | Mint Fresh */
+
+    /* 2. THE TEXT (Visible Navy Blue) */
+    /* This has enough blue saturation to be clearly blue, but stays formal */
+    --foreground: 222 47% 25%;     /* #213555 | Deep Cobalt Navy */
+
+    /* 3. THE SIGNATURE (Terracotta / Warmth) */
+    --primary: 15 60% 50%;         /* #B85B3E | Muted Terracotta */
+    --primary-foreground: 0 0% 100%;
+
+    /* 4. THE HIGHLIGHT (Soft Sunlight) */
+    --secondary: 210 40% 92%;      /* #E3EAF2 | Soft Blue Tint (matches the Navy) */
+    --secondary-foreground: 222 47% 25%; 
+
+    /* 5. UI ELEMENTS */
+    --muted: 24 10% 88%;           /* #E6E2DF | Warm Pebble */
+    --muted-foreground: 222 20% 45%; /* Faded Navy-Grey */
+    
+    --border: 222 20% 85%;          /* Cool Grey-Blue Border */
+    --input: 222 20% 85%;
+    --card: 0 0% 100% / 0.6;
+    
+    --ring: 222 47% 25% / 0.3;     /* Navy Ring */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* --- THE NIGHT OFFICE --- */
+    --background: 222 47% 10%;     /* Deepest Navy Base */
+    --foreground: 210 40% 96%;     /* Off-White with a blue tint */
+    
+    --primary: 15 75% 65%;         /* Terracotta Pop */
+    --primary-foreground: 222 47% 10%;
+
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 90%;
+
+    --border: 222 30% 20%;
+    --card: 222 47% 12%;
+  }
+}
+
+#banner_heading{
+  @apply text-foreground font-bold max-tls:text-3xl lp:text-5xl dp:text-6xl;
+}
+
+#banner_span{
+  @apply text-blue-700 font-semibold italic
+}
+
